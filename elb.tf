@@ -16,7 +16,7 @@ resource "aws_subnet" "example" {
 resource "aws_security_group" "example" {
   name        = "example-security-group"
   description = "Allow traffic to ECS service"
-  vpc_id      = aws_vpc.example.id
+  vpc_id      = "vpc-0a3cf9887fe999c01"
 
   ingress {
     from_port   = 8080
@@ -38,7 +38,7 @@ resource "aws_alb" "example" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = ["sg-0dc8d4bcbbaf828dc"]
-  subnets            = "subnet-06370e92c0c296da1"
+  subnets            = ["subnet-06370e92c0c296da1,subnet-0cc71f36f26b6b03a"]
 }
 
 resource "aws_alb_target_group" "example" {
