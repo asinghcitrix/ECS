@@ -37,8 +37,8 @@ resource "aws_alb" "example" {
   name               = "example-alb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = ["sg-0dc8d4bcbbaf828dc"]
-  subnets            = ["subnet-06370e92c0c296da1,subnet-0cc71f36f26b6b03a"]
+  security_groups    = ["sg-056f410be6edf48a9"]
+  subnets            = ["subnet-06370e92c0c296da1","subnet-0cc71f36f26b6b03a"]
 }
 
 resource "aws_alb_target_group" "example" {
