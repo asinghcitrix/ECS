@@ -37,15 +37,15 @@ resource "aws_alb" "example" {
   name               = "example-alb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.example.id]
-  subnets            = aws_subnet.example[*].id
+  security_groups    = ["sg-0dc8d4bcbbaf828dc"]
+  subnets            = "subnet-06370e92c0c296da1"
 }
 
 resource "aws_alb_target_group" "example" {
   name     = "example-target-group"
   port     = 8080
   protocol = "HTTP"
-  vpc_id   = aws_vpc.example.id
+  vpc_id   = "vpc-0a3cf9887fe999c01"
 
   health_check {
     path                = "/healthcheck"  # Adjust health check path as needed
